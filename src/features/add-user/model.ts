@@ -50,3 +50,5 @@ sample({
   fn: (form) => ({ body: { ...form, status: form.status.name } }),
   target: saveNewUserFx,
 })
+
+sample({ clock: saveNewUserFx.done, target: [modal.hide, userForm.resetForm] })
