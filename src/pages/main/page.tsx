@@ -32,7 +32,7 @@ const Content = splitView({
 
 export const Main = () => {
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto mt-5">
       <Content />
     </section>
   )
