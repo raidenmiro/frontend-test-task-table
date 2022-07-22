@@ -1,6 +1,8 @@
 import { DotsVerticalIcon } from '@heroicons/react/outline'
 import dayjs from 'dayjs'
 import { useList, useUnit } from 'effector-react'
+import { CreateUserButton } from '~/features/add-user/ui/create-user'
+import { CreateUserForm } from '~/features/add-user/ui/form'
 import type { Status, User } from '~/shared/api/types'
 import { useIntersection } from '~/shared/lib/useIntersection'
 import { splitView } from '~/shared/lib/variant-view'
@@ -30,9 +32,19 @@ const Content = splitView({
   },
 })
 
+const Panel = () => {
+  return (
+    <div className="flex justify-end mb-3">
+      <CreateUserButton />
+      <CreateUserForm />
+    </div>
+  )
+}
+
 export const Main = () => {
   return (
     <section className="container mx-auto mt-5">
+      <Panel />
       <Content />
     </section>
   )
