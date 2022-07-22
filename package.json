@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "deps": "madge --circular ./src/main.tsx"
+    "deps": "madge --circular ./src/main.tsx",
+    "lint": "eslint --fix \"src/**/*.{ts,tsx,js,jsx}\"",
+    "format": "prettier --write \"./src/**/**.{ts,tsx,js,jsx,json}\""
   },
   "dependencies": {
     "effector": "^22.3.0",
