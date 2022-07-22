@@ -50,8 +50,8 @@ export const usersList = (amount: number) => {
 }
 
 export const userList = [
+  ...usersList(300),
   userDima,
   userEleonora,
   userHermione,
-  ...usersList(300),
 ]
