@@ -1,4 +1,14 @@
 {
   "presets": [],
-  "plugins": ["effector/babel-plugin"]
+  "plugins": [
+    [
+      "effector/babel-plugin",
+      {
+        "factories": [
+          "src/shared/lib/create-modal",
+          "~/shared/lib/create-modal"
+        ]
+      }
+    ]
+  ]
 }
