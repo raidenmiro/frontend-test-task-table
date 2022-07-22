@@ -16,17 +16,15 @@ export interface UserBody {
   body: Omit<User, 'id' | 'created_at'>
 }
 
-export const saveNewUserFx = createEffect<UserBody, { user: User }>(
-  async ({ body }) => {
-    const user = await request<{ user: User }>({
-      path: 'users',
-      method: 'POST',
-      body,
-    })
+export const saveNewUserFx = createEffect<UserBody, User>(async ({ body }) => {
+  const { user } = await request<{ user: User }>({
+    path: 'users',
+    method: 'POST',
+    body,
+  })
 
-    return user
-  }
-)
+  return user
+})
 
 export interface RequestParams {
   userId: string
