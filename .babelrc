@@ -1,4 +1,4 @@
 {
-  "presets": [["effector/babel-plugin"]],
-  "plugins": []
+  "presets": [],
+  "plugins": ["effector/babel-plugin"]
 }
