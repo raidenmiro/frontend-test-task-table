@@ -1,0 +1,4 @@
+{
+  "presets": [["effector/babel-plugin"]],
+  "plugins": []
+}
