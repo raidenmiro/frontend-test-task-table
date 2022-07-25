@@ -7,7 +7,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "jest",
-    "jest-clear": "jest --clearCache",
+    "test:clear": "jest --clearCache",
     "commit": "git-cz",
     "prepare": "husky install",
     "deps": "madge --circular ./src/main.tsx",
