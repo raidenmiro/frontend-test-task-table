@@ -10,5 +10,38 @@
         ]
       }
     ]
-  ]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        ["@babel/preset-env", { "targets": { "node": "current" } }],
+        ["@babel/preset-react", { "runtime": "automatic" }],
+        "@babel/preset-typescript"
+      ],
+      "plugins": [
+        "@babel/plugin-transform-runtime",
+        "babel-plugin-transform-vite-meta-env",
+        "@babel/plugin-transform-modules-commonjs",
+        [
+          "module-resolver",
+          {
+            "alias": {
+              "~": "./src"
+            }
+          }
+        ],
+        [
+          "transform-rename-import",
+          {
+            "replacements": [
+              {
+                "original": "effector-react$",
+                "replacement": "effector-react/ssr"
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  }
 }
