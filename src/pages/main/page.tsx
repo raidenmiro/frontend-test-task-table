@@ -50,13 +50,23 @@ export const Main = () => {
   )
 }
 
-const UsersTable = () => {
-  const pending = useUnit($loading)
+const LoadingBar = splitView({
+  source: $loading.map((loading) => {
+    if (loading) return 'show'
 
+    return 'hide'
+  }),
+  cases: {
+    show: () => <LinearProgressBar />,
+    hide: () => null,
+  },
+})
+
+const UsersTable = () => {
   return (
     <>
       <Users />
-      {pending && <LinearProgressBar />}
+      <LoadingBar />
     </>
   )
 }
