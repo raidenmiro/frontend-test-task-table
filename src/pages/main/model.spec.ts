@@ -13,7 +13,7 @@ afterAll(() => {
   server.shutdown()
 })
 
-describe('infinite loading', () => {
+  describe('infinite loading', async () => {
   test('load users when scrolled table to the end', async () => {
     const scope = fork({
       values: new Map().set($users, []),
