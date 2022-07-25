@@ -1,3 +1,5 @@
+import { baseUrlBackend } from '../config/constance'
+
 export interface Request {
   path: string
   query?: Record<string, string>
@@ -11,7 +13,7 @@ export const request = async <Done = unknown>({
   method = 'GET',
   ...config
 }: Request): Promise<Done> => {
-  if (!import.meta.env.VITE_BASE_BACKEND_URL) {
+  if (!baseUrlBackend) {
     throw new Error('[request] base backend url not provided')
   }
 
@@ -23,7 +25,7 @@ export const request = async <Done = unknown>({
   const body = config.body ? JSON.stringify(config.body) : undefined
   const query = config.query ? new URLSearchParams(config.query).toString() : ''
 
-  const url = `${import.meta.env.VITE_BASE_BACKEND_URL}/${path}?${query}`
+  const url = `${baseUrlBackend}/${path}?${query}`
 
   const answer = await fetch(url, {
     headers,
