@@ -32,6 +32,3 @@ RUN rm -rf ./*
 COPY --from=build /app/dist .
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
-
-
-
