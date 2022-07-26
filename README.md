@@ -1,6 +1,6 @@
 # Frontend test task
 
-Simple table with infinite loading and editing
+Simple table with infinite loading and editing: [preview](https://frontend-test-task-table.vercel.app/)
 
 ## Sources
 
