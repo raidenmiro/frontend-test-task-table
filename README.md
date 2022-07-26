@@ -30,6 +30,33 @@ npm install
 npm run dev
 ```
 
+## Deploy with docker-compose
+
+```bash
+docker-compose up -d
+```
+
+## Сheck the result
+
+List containers
+
+```bash
+$ docker ps
+
+CONTAINER ID   IMAGE                          COMMAND                   CREATED              STATUS              PORTS                               NAMES
+7e34d10fef75   frontend-test-task_test-task   "nginx -g 'daemon of…"   About a minute ago   Up About a minute   0.0.0.0:80->80/tcp, :::80->80/tcp   test-task
+```
+
+## Stop and remove containers
+
+```bash
+docker-compose down
+```
+
+## After starting the application, go to navigate <http://localhost>
+
+![page](./docs/example.png)
+
 ## Tests
 
 To run the tests, do the following:
